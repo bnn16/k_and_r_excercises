@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#define LOWER 0
+#define UPPER 300
+#define STEP 20
+
 int convert_to_farh(int celsius) {
         return celsius * 1.8 + 32;
 }
@@ -35,26 +39,21 @@ int oops_main(int argv, char* argc[]) {
 
 void fahr_to_celsius() {
         float fahr, celsius;
-        float lower,upper, step;
 
-        lower = 0;
-        upper = 300;
-        step = 20;
+        fahr = LOWER;
 
-        fahr = lower;
-
-        while(fahr <= upper) {
+        while(fahr <= UPPER) {
                 celsius = 5 * (fahr - 32) / 9;
                 printf("%3f\t%6f\n", fahr, celsius);
 
-                fahr = fahr + step;
+                fahr = fahr + STEP;
         }
 }
 
 void fahr_to_celsius_for() {
         float fahr;
 
-        for(fahr = 0; fahr <= 300; fahr = fahr + 20) {
+        for(fahr = LOWER; fahr <= UPPER; fahr = fahr + STEP) {
                 printf("%3f\t%6f\n", fahr, (5.0 /9.0) * (fahr - 32));
         }
 }
@@ -62,7 +61,7 @@ void fahr_to_celsius_for() {
 void fahr_to_celsius_for_reversed() {
         float fahr;
 
-        for(fahr = 300; fahr >= 0; fahr = fahr - 20) {
+        for(fahr = UPPER; fahr >= LOWER; fahr = fahr - STEP) {
                 printf("%3f\t%6f\n", fahr, (5.0 /9.0) * (fahr - 32));
         }
 }
