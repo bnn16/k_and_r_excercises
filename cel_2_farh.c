@@ -51,13 +51,28 @@ void fahr_to_celsius() {
         }
 }
 
+void fahr_to_celsius_for() {
+        float fahr;
+
+        for(fahr = 0; fahr <= 300; fahr = fahr + 20) {
+                printf("%3f\t%6f\n", fahr, (5.0 /9.0) * (fahr - 32));
+        }
+}
+
+void fahr_to_celsius_for_reversed() {
+        float fahr;
+
+        for(fahr = 300; fahr >= 0; fahr = fahr - 20) {
+                printf("%3f\t%6f\n", fahr, (5.0 /9.0) * (fahr - 32));
+        }
+}
 
 
 int main(int argv, char* argc[]) {
         // return oops_main(argv, argc);
-        //
-        //
-        fahr_to_celsius();
+        // fahr_to_celsius();
+        // fahr_to_celsius_for();
+        fahr_to_celsius_for_reversed();
 
        return 0;
 }
